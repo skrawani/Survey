@@ -1,28 +1,32 @@
-var $body = $('body');
-var $progressBar = $('progress');
-var $animContainer = $('.animation-container');
+var $body = $("body");
+var $progressBar = $("progress");
+var $animContainer = $(".animation-container");
 var value = 0;
-var transitionEnd = 'webkitTransitionEnd transitionend';
+var transitionEnd = "webkitTransitionEnd transitionend";
 
 /**
  * Resets the form back to the default state.
  * ==========================================
  */
 function formReset() {
-	value = 0;
-	$progressBar.val(value);
-	// $('form input').not('button').not('radio').val('').removeClass('hasInput');
-	$('.js-form-step').removeClass('left leaving');
-	$('.js-form-step').not('.js-form-step[data-step="1"]').addClass('hidden waiting');
-	$('.js-form-step[data-step="1"]').removeClass('hidden');
-	$('.form-progress-indicator').not('.one').removeClass('active');
-	
-	$animContainer.css({
-		'paddingBottom': $('.js-form-step[data-step="1"]').height() + 'px'
-	});
-	
-	console.warn('Form reset.');
-	return false;
+  value = 0;
+  $progressBar.val(value);
+  // $('form input').not('button').not('radio').val('').removeClass('hasInput');
+  $(".js-form-step").removeClass("left leaving");
+  $(".js-form-step")
+    .not('.js-form-step[data-step="1"]')
+    .addClass("hidden waiting");
+  $('.js-form-step[data-step="1"]').removeClass("hidden");
+  $(".form-progress-indicator")
+    .not(".one")
+    .removeClass("active");
+
+  $animContainer.css({
+    paddingBottom: $('.js-form-step[data-step="1"]').height() + "px"
+  });
+
+  console.warn("Form reset.");
+  return false;
 }
 
 /**
@@ -30,20 +34,19 @@ function formReset() {
  * ===================================================
  */
 function setupClickHandlers() {
+  // Show next form on continue click
+  $('button[type="next"]').on("click", function(event) {
+    event.preventDefault();
+    var $currentForm = $(this).parents(".js-form-step");
+    showNextForm($currentForm);
+  });
 
-	// Show next form on continue click
-	$('button[type="next"]').on('click', function(event) {
-			event.preventDefault();
-			var $currentForm = $(this).parents('.js-form-step');
-			showNextForm($currentForm);
-	});
+  // Reset form on reset button click
+  $(".js-reset").on("click", function() {
+    formReset();
+  });
 
-	// Reset form on reset button click
-	$('.js-reset').on('click', function() {
-		formReset();
-	});
-	
-	return false;
+  return false;
 }
 
 /**
@@ -52,59 +55,63 @@ function setupClickHandlers() {
  * ======================================
  */
 function showNextForm($currentForm) {
-	var currentFormStep = parseInt($currentForm.attr('data-step')) || false;
-	var $nextForm = $('.js-form-step[data-step="' + (currentFormStep + 1) + '"]');
+  var currentFormStep = parseInt($currentForm.attr("data-step")) || false;
+  var $nextForm = $('.js-form-step[data-step="' + (currentFormStep + 1) + '"]');
 
-	console.log('Current step is ' + currentFormStep);
-	console.log('The next form is # ' + $nextForm.attr('data-step'));
+  console.log("Current step is " + currentFormStep);
+  console.log("The next form is # " + $nextForm.attr("data-step"));
 
-	$body.addClass('freeze');
+  $body.addClass("freeze");
 
-	// Ensure top of form is in view
-	$('html, body').animate({
-		scrollTop : $progressBar.offset().top
-	}, 'fast');
+  // Ensure top of form is in view
+  $("html, body").animate(
+    {
+      scrollTop: $progressBar.offset().top
+    },
+    "fast"
+  );
 
-	// Hide current form fields
-	$currentForm.addClass('leaving');
-	setTimeout(function() {
-		$currentForm.addClass('hidden');
-	}, 500);
-	
-	// Animate container to height of form
-	$animContainer.css({
-		'paddingBottom' : $nextForm.height() + 'px'
-	});  
+  // Hide current form fields
+  $currentForm.addClass("leaving");
+  setTimeout(function() {
+    $currentForm.addClass("hidden");
+  }, 500);
 
-	// Show next form fields
-	$nextForm.removeClass('hidden')
-					 .addClass('coming')
-					 .one(transitionEnd, function() {
-						 $nextForm.removeClass('coming waiting');
-					 });
+  // Animate container to height of form
+  $animContainer.css({
+    paddingBottom: $nextForm.height() + "px"
+  });
 
-	// Increment value (based on 4 steps 0 - 100)
-	value += 33;
+  // Show next form fields
+  $nextForm
+    .removeClass("hidden")
+    .addClass("coming")
+    .one(transitionEnd, function() {
+      $nextForm.removeClass("coming waiting");
+    });
 
-	// Reset if we've reached the end
-	if (value >= 100) {
-		formReset();
-	} else {
-		$('.form-progress')
-			.find('.form-progress-indicator.active')
-			.next('.form-progress-indicator')
-			.addClass('active');
+  // Increment value (based on 4 steps 0 - 100)
+  value += 33;
 
-		// Set progress bar to the next value
-		$progressBar.val(value);
-	}
+  // Reset if we've reached the end
+  if (value >= 100) {
+    formReset();
+  } else {
+    $(".form-progress")
+      .find(".form-progress-indicator.active")
+      .next(".form-progress-indicator")
+      .addClass("active");
 
-	// Update hidden progress descriptor (for a11y)
-	$('.js-form-progress-completion').html($progressBar.val() + '% complete');
+    // Set progress bar to the next value
+    $progressBar.val(value);
+  }
 
-	$body.removeClass('freeze');
+  // Update hidden progress descriptor (for a11y)
+  $(".js-form-progress-completion").html($progressBar.val() + "% complete");
 
-	return false;
+  $body.removeClass("freeze");
+
+  return false;
 }
 
 /**
@@ -112,33 +119,35 @@ function showNextForm($currentForm) {
  =====================================================
  */
 function setupFloatLabels() {
-	// Check the inputs to see if we should keep the label floating or not
-	$('form input').not('button').not('radio').on('blur', function() {
+  // Check the inputs to see if we should keep the label floating or not
+  $("form input")
+    .not("button")
+    .not("radio")
+    .on("blur", function() {
+      // Different validation for different inputs
+      switch (this.tagName) {
+        case "SELECT":
+          if (this.value.length > 0) {
+            this.className = "hasInput";
+          } else {
+            this.className = "";
+          }
+          break;
 
-		// Different validation for different inputs
-		switch (this.tagName) {
-			case 'SELECT':
-				if (this.value.length > 0) {
-					this.className = 'hasInput';
-				} else {
-					this.className = '';
-				}
-				break;
+        case "INPUT":
+          if (this.value !== "") {
+            this.className = "hasInput";
+          } else {
+            this.className = "";
+          }
+          break;
 
-			case 'INPUT':
-				if (this.value !== '') {
-					this.className = 'hasInput';
-				} else {
-					this.className = '';
-				}
-				break;
+        default:
+          break;
+      }
+    });
 
-			default:
-				break;
-		}
-	});
-	
-	return false;
+  return false;
 }
 
 /**
@@ -146,9 +155,9 @@ function setupFloatLabels() {
  * =======================
  */
 function init() {
-	formReset();
-	setupFloatLabels();
-	setupClickHandlers();
+  formReset();
+  setupFloatLabels();
+  setupClickHandlers();
 }
 
 init();
