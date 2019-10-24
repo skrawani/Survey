@@ -790,7 +790,8 @@ h1, h2, h3, h4, h5,
   position: relative;
 }
 
-.intro-section, .intro-section .container .row {
+.intro-section,
+.intro-section .container .row {
   height: 100vh;
   min-height: 900px;
 }
@@ -830,7 +831,8 @@ h1, h2, h3, h4, h5,
   padding: 20px 0;
 }
 
-.custom-breadcrumns span, .custom-breadcrumns a {
+.custom-breadcrumns span,
+.custom-breadcrumns a {
   font-size: 14px;
 }
 
@@ -1097,17 +1099,20 @@ h1, h2, h3, h4, h5,
   background: #fff;
 }
 
-.owl-slide-3, .owl-slide {
+.owl-slide-3,
+.owl-slide {
   position: relative;
 }
 
-.owl-slide-3 .owl-stage, .owl-slide .owl-stage {
+.owl-slide-3 .owl-stage,
+.owl-slide .owl-stage {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .owl-slide-3 .owl-nav .owl-prev,
-.owl-slide-3 .owl-nav .owl-next, .owl-slide .owl-nav .owl-prev,
+.owl-slide-3 .owl-nav .owl-next,
+.owl-slide .owl-nav .owl-prev,
 .owl-slide .owl-nav .owl-next {
   position: absolute;
   top: 50%;
@@ -1120,7 +1125,8 @@ h1, h2, h3, h4, h5,
 }
 
 .owl-slide-3 .owl-nav .owl-prev > span,
-.owl-slide-3 .owl-nav .owl-next > span, .owl-slide .owl-nav .owl-prev > span,
+.owl-slide-3 .owl-nav .owl-next > span,
+.owl-slide .owl-nav .owl-prev > span,
 .owl-slide .owl-nav .owl-next > span {
   font-size: 1.5rem;
   position: absolute;
@@ -1130,15 +1136,18 @@ h1, h2, h3, h4, h5,
           transform: translate(-50%, -50%);
 }
 
-.owl-slide-3 .owl-nav .owl-prev, .owl-slide .owl-nav .owl-prev {
+.owl-slide-3 .owl-nav .owl-prev,
+.owl-slide .owl-nav .owl-prev {
   left: 0;
 }
 
-.owl-slide-3 .owl-nav .owl-next, .owl-slide .owl-nav .owl-next {
+.owl-slide-3 .owl-nav .owl-next,
+.owl-slide .owl-nav .owl-next {
   right: 0;
 }
 
-.owl-slide-3 .owl-dots, .owl-slide .owl-dots {
+.owl-slide-3 .owl-dots,
+.owl-slide .owl-dots {
   position: absolute;
   bottom: -30px;
   left: 50%;
@@ -1147,11 +1156,13 @@ h1, h2, h3, h4, h5,
   text-align: center;
 }
 
-.owl-slide-3 .owl-dots .owl-dot, .owl-slide .owl-dots .owl-dot {
+.owl-slide-3 .owl-dots .owl-dot,
+.owl-slide .owl-dots .owl-dot {
   display: inline-block;
 }
 
-.owl-slide-3 .owl-dots .owl-dot > span, .owl-slide .owl-dots .owl-dot > span {
+.owl-slide-3 .owl-dots .owl-dot > span,
+.owl-slide .owl-dots .owl-dot > span {
   border-radius: 50%;
   display: inline-block;
   width: 7px;
@@ -1160,7 +1171,8 @@ h1, h2, h3, h4, h5,
   background: rgba(0, 0, 0, 0.2);
 }
 
-.owl-slide-3 .owl-dots .owl-dot.active > span, .owl-slide .owl-dots .owl-dot.active > span {
+.owl-slide-3 .owl-dots .owl-dot.active > span,
+.owl-slide .owl-dots .owl-dot.active > span {
   background: #51be78;
 }
 
@@ -1168,7 +1180,8 @@ h1, h2, h3, h4, h5,
   display: none;
 }
 
-.feature-1 .icon-wrapper, .person .icon-wrapper {
+.feature-1 .icon-wrapper,
+.person .icon-wrapper {
   position: relative;
   width: 96px;
   height: 55.43px;
@@ -1180,7 +1193,8 @@ h1, h2, h3, h4, h5,
   background: #ccc;
 }
 
-.feature-1 .icon-wrapper > span, .person .icon-wrapper > span {
+.feature-1 .icon-wrapper > span,
+.person .icon-wrapper > span {
   width: 96px;
   height: 96px;
   text-align: center;
@@ -1192,7 +1206,9 @@ h1, h2, h3, h4, h5,
   left: 0;
 }
 
-.feature-1 .icon-wrapper:before, .feature-1 .icon-wrapper:after, .person .icon-wrapper:before, .person .icon-wrapper:after {
+.feature-1 .icon-wrapper:before, .feature-1 .icon-wrapper:after,
+.person .icon-wrapper:before,
+.person .icon-wrapper:after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -1204,20 +1220,24 @@ h1, h2, h3, h4, h5,
   left: 14.06px;
 }
 
-.feature-1 .icon-wrapper:before, .person .icon-wrapper:before {
+.feature-1 .icon-wrapper:before,
+.person .icon-wrapper:before {
   top: -33.94px;
 }
 
-.feature-1 .icon-wrapper:after, .person .icon-wrapper:after {
+.feature-1 .icon-wrapper:after,
+.person .icon-wrapper:after {
   bottom: -33.94px;
 }
 
-.feature-1 .feature-1-content, .person .feature-1-content {
+.feature-1 .feature-1-content,
+.person .feature-1-content {
   padding: 50px 20px 20px 20px;
   text-align: center;
 }
 
-.feature-1 .feature-1-content h2, .person .feature-1-content h2 {
+.feature-1 .feature-1-content h2,
+.person .feature-1-content h2 {
   font-size: 1.3rem;
   color: #000;
 }
@@ -1342,7 +1362,8 @@ h1, h2, h3, h4, h5,
   z-index: 2;
 }
 
-.ftco-subscribe-1 > .container h2, .ftco-subscribe-1 > .container p {
+.ftco-subscribe-1 > .container h2,
+.ftco-subscribe-1 > .container p {
   color: #fff;
 }
 
@@ -1484,3 +1505,85 @@ h1, h2, h3, h4, h5,
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+/* cards */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+.snip1344 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.4em;
+  background-color: #141414;
+}
+.snip1344 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.snip1344 .background {
+  width: 100%;
+  vertical-align: top;
+  opacity: 0.2;
+  -webkit-filter: grayscale(100%) blur(10px);
+  filter: grayscale(100%) blur(10px);
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+.snip1344 figcaption {
+  width: 100%;
+  padding: 15px 25px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.snip1344 .profile {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  max-width: 100px;
+  opacity: 1;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.snip1344 h3 {
+  margin: 0 0 5px;
+  font-weight: 400;
+}
+.snip1344 h3 span {
+  display: block;
+  font-size: 0.6em;
+  color: #f39c12;
+  opacity: 0.75;
+}
+.snip1344 i {
+  padding: 10px 5px;
+  display: inline-block;
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0.65;
+}
+.snip1344 a {
+  text-decoration: none;
+}
+.snip1344 i:hover {
+  opacity: 1;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1344:hover .background,
+.snip1344.hover .background {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
